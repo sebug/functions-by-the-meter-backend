@@ -9,5 +9,10 @@ Following this guide: https://www.shanebart.com/deploy-az-func-with-github-actio
 	--role contributor \
 	--scopes /subscriptions/{subscription-id}/resourceGroups/ByTheMeterGroup \
 	--sdk-auth
-	
+
+Now create a Github Repo Secret with the JSON you received.
+
+Go to the Azure portal and create an Azure ARM template for the function to be created.
+
+
 

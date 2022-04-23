@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "4b0e2353-f5ff-4362-89f1-381ff65dca72"
+        },
+        "name": {
+            "value": "bythemeterapp"
+        },
+        "location": {
+            "value": "Switzerland North"
+        },
+        "hostingPlanName": {
+            "value": "ASP-ByTheMeterGroup-a224"
+        },
+        "serverFarmResourceGroup": {
+            "value": "ByTheMeterGroup"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "storageAccountName": {
+            "value": "bythemetergroupbbc9"
+        },
+        "sku": {
+            "value": "Dynamic"
+        },
+        "skuCode": {
+            "value": "Y1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "use32BitWorkerProcess": {
+            "value": true
+        },
+        "netFrameworkVersion": {
+            "value": "v6.0"
+        }
+    }
+}
