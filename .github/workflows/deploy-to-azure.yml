@@ -54,7 +54,7 @@ jobs:
           publishfolder="${{ github.workspace }}/output"
           mkdir $publishfolder
           cd $publishfolder
-          cp -r ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ByTheMeter .
+          cp -r ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ByTheMeter ByTheMeter
           mkdir ${{ env.BUILD_OUTPUT_PATH }}
           zip -r ${{ env.BUILD_OUTPUT_PATH }}/${{ env.BUILD_PACKAGE_NAME }} .
 
