@@ -2,7 +2,7 @@ name: azure-deploy
 
 on:
   push:
-    branches: [master]
+    branches: [ master ]
 
 env:
   AZURE_RESOURCE_GROUP_NAME: 'ByTheMeterGroup'
