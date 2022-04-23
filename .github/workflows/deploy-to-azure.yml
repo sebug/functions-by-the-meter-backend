@@ -7,7 +7,7 @@ on:
 env:
   AZURE_RESOURCE_GROUP_NAME: 'ByTheMeterGroup'
   AZURE_FUNCTIONAPP_NAME: 'bythemeterapp'
-  AZURE_FUNCTIONAPP_PACKAGE_PATH: '${{ github.workspace }}/src/ByTheMeter'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '${{ github.workspace }}/src'
   BUILD_OUTPUT_PATH: '${{ github.workspace }}/build-artifacts'
   BUILD_PACKAGE_NAME: 'az-func.zip'
 
@@ -54,8 +54,7 @@ jobs:
           publishfolder="${{ github.workspace }}/output"
           mkdir $publishfolder
           cd $publishfolder
-          cp ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/function.json .
-          cp ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/index.js .
+          cp -r ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ByTheMeter .
           mkdir ${{ env.BUILD_OUTPUT_PATH }}
           zip -r ${{ env.BUILD_OUTPUT_PATH }}/${{ env.BUILD_PACKAGE_NAME }} .
 
