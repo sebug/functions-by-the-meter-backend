@@ -35,6 +35,6 @@ jobs:
           --name az-func-workflow-deploy \
           --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME }} \
           --template-file $GITHUB_WORKSPACE/ArmTemplates/template.json \
-          --mode incremental \\
+          --mode incremental \
           --parameters $GITHUB_WORKSPACE/ArmTemplates/parameters.json
 
