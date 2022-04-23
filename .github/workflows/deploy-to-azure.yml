@@ -1,0 +1,40 @@
+name: azure-deploy
+
+on:
+  push:
+    branches: [master]
+
+env:
+  AZURE_RESOURCE_GROUP_NAME: 'ByTheMeterGroup'
+  AZURE_FUNCTIONAPP_NAME: 'bythemeterapp'
+  AZURE_FUNCTIONAPP_PACKAGE_PATH: '${{ github.workspace }}/src/ByTheMeter'
+  BUILD_OUTPUT_PATH: '${{ github.workspace }}/build-artifacts'
+  BUILD_PACKAGE_NAME: 'az-func.zip'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy-az-infrastructure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Login to Azure'
+        uses: azure/login@v1
+        with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: 'Checking out source code ...'
+        uses: actions/checkout@v2
+
+      - name: 'Creating Azure Function App'
+        uses: azure/CLI@v1
+        with:
+        inlineScript: |
+          az deployment group create \
+          --name az-func-workflow-deploy \
+          --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME }} \
+          --template-file $GITHUB_WORKSPACE/ArmTemplates/template.json \
+          --mode incremental \\
+          --parameters $GITHUB_WORKSPACE/ArmTemplates/parameters.json
+
