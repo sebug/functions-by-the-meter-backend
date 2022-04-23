@@ -55,6 +55,7 @@ jobs:
           mkdir $publishfolder
           cd $publishfolder
           cp -r ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/ByTheMeter ByTheMeter
+          cp ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/host.json .
           mkdir ${{ env.BUILD_OUTPUT_PATH }}
           zip -r ${{ env.BUILD_OUTPUT_PATH }}/${{ env.BUILD_PACKAGE_NAME }} .
 
