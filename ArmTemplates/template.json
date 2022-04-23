@@ -144,7 +144,7 @@
                 "Request_Source": "IbizaWebAppExtensionCreate",
                 "Flow_Type": "Redfield",
                 "Application_Type": "web",
-                "WorkspaceResourceId": "/subscriptions/4b0e2353-f5ff-4362-89f1-381ff65dca72/resourceGroups/DefaultResourceGroup-CHN/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-4b0e2353-f5ff-4362-89f1-381ff65dca72-CHN"
+                "WorkspaceResourceId": "/subscriptions/4b0e2353-f5ff-4362-89f1-381ff65dca72/resourceGroups/ByTheMeterGroup/providers/Microsoft.OperationalInsights/workspaces/DefaultWorkspace-4b0e2353-f5ff-4362-89f1-381ff65dca72-CHN"
             }
         },
         {
@@ -165,7 +165,7 @@
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2019-10-01",
             "name": "newWorkspaceTemplate",
-            "resourceGroup": "DefaultResourceGroup-CHN",
+            "resourceGroup": "ByTheMeterGroup",
             "subscriptionId": "[parameters('subscriptionId')]",
             "properties": {
                 "mode": "Incremental",

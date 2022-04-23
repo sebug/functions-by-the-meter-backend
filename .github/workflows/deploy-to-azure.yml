@@ -34,7 +34,7 @@ jobs:
           inlineScript: |
             az deployment group create \
             --name az-func-workflow-deploy \
-            --resource-group ByTheMeterGroup \
+            --resource-group ${{ env.AZURE_RESOURCE_GROUP_NAME }} \
             --template-file $GITHUB_WORKSPACE/ArmTemplates/template.json \
             --mode incremental \
             --parameters $GITHUB_WORKSPACE/ArmTemplates/parameters.json
